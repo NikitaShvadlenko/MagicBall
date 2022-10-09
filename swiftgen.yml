@@ -1,0 +1,15 @@
+strings:
+  inputs:
+    - MagicBall/Resources/Strings/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: MagicBall/Generated/Strings+Generated.swift
+
+xcassets:
+  inputs:
+    - MagicBall/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      params:
+        forceProvidesNamespaces: true
+      output: MagicBall/Generated/XCAssets+Generated.swift
