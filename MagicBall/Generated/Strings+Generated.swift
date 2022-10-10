@@ -11,9 +11,13 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
   /// Ask
-  internal static let askButtonTitle = L10n.tr("Localizable", "AskButtonTitle")
+  internal static let askButtonTitle = L10n.tr("Localizable", "askButtonTitle")
   /// Ask me anything...
-  internal static let askScreenTitle = L10n.tr("Localizable", "AskScreenTitle")
+  internal static let askScreenTitle = L10n.tr("Localizable", "askScreenTitle")
+  /// Tap count %@
+  internal static func tapCount(_ p1: Any) -> String {
+    return L10n.tr("Localizable", "tapCount", String(describing: p1))
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

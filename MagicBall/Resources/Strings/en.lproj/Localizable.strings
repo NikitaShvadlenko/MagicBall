@@ -1,2 +1,3 @@
-"AskScreenTitle" = "Ask me anything...";
-"AskButtonTitle" = "Ask";
+"askScreenTitle" = "Ask me anything...";
+"askButtonTitle" = "Ask";
+"tapCount" = "Tap count %@";

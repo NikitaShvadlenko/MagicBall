@@ -1,15 +1,19 @@
 import SwiftUI
 
 struct ContentView: View {
+
     @State var ballImage = Image(uiImage: Asset.ball1.image)
     @State var tapCount = 0
+
     var body: some View {
         ZStack {
             Color(Asset.backgroundColor.color).ignoresSafeArea()
             VStack(spacing: 25) {
                 HStack {
-                    Text("Tap count \(tapCount)")
+                    Text(L10n.tapCount(tapCount))
                         .padding(.leading, 1)
+                        .foregroundColor(Color(Asset.textColor.color))
+                        .opacity(0.8)
                     Spacer()
                 }
                 Text(L10n.askScreenTitle)
@@ -21,7 +25,7 @@ struct ContentView: View {
                 Button(L10n.askButtonTitle) {
                     askButtonPressed()
                 }
-                .frame(width: 120, height: 60.00)
+                .frame(width: 190, height: 60.00)
                 .foregroundColor(Color(Asset.askButtonTextColor.color))
                 .font(.title)
                 .background(Color(Asset.buttonBackgroundColor.color))
