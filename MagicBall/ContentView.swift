@@ -1,15 +1,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    var ballImage = Image(uiImage: Asset.ball1.image)
+    @State var ballImage = Image(uiImage: Asset.ball1.image)
+    @State var tapCount = 0
     var body: some View {
         ZStack {
             Color(Asset.backgroundColor.color).ignoresSafeArea()
-            VStack(alignment: .center, spacing: 100) {
+            VStack(spacing: 25) {
+                HStack {
+                    Text("Tap count \(tapCount)")
+                        .padding(.leading, 1)
+                    Spacer()
+                }
                 Text(L10n.askScreenTitle)
                     .font(.largeTitle)
                     .foregroundColor(Color(Asset.textColor.color))
+                Spacer()
                 ballImage
+                Spacer()
                 Button(L10n.askButtonTitle) {
                     askButtonPressed()
                 }
@@ -36,5 +44,8 @@ struct ContentView_Previews: PreviewProvider {
 
 extension ContentView {
     private func askButtonPressed() {
+        guard let image = ImageProvider.imageFromValue(for: ResponseGenerator.generateRandomResponse()) else { return }
+        ballImage = image
+        tapCount += 1
     }
 }

@@ -1,9 +1,8 @@
-//
-//  responseGenerator.swift
-//  MagicBall
-//
-//  Created by Nikita Shvad on 10.10.2022.
-//  Copyright © 2022 Nikita Shvadlenko. All rights reserved.
-//
-
 import Foundation
+
+struct ResponseGenerator {
+    static func generateRandomResponse() -> Int {
+        let response = Int.random(in: 1...5)
+        return response
+    }
+}
